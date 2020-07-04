@@ -2,12 +2,15 @@ const dotenv = require('dotenv');
 const express = require('express');
 const bodyParser =require('body-parser');
 const axios = require('axios');
+const cors = require('cors')
+
 
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 3300;
 const mapsKey = process.env.MAPS_API;
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
